@@ -14,12 +14,25 @@
   <div id="root">wait...</div>
   <script type="text/babel">
     let dom = document.querySelector('#root');
+<<<<<<< HEAD
     let title = "新タイトル";
     let message = "新しいメッセージです。";
     let el = (
       <div>
         <h2>{title}</h2>
         <p>{message}</p>
+=======
+let message = "新しいメッセージです";
+
+const msg_s = {
+  fontSize: "20pt",
+  color: "red",
+  border: "1px solid blue"
+}
+let el = (
+  <div>
+    <p style={msg_s}>{message}</p>
+>>>>>>> JSX
       </div>
     );
     ReactDOM.render(el, dom);
