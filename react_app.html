@@ -14,29 +14,43 @@
   <div id="root">wait...</div>
   <script type="text/babel">
     let dom = document.querySelector('#root');
-    let message_true = "メッセージを表示します。";
-    let message_false = "メッセージはありません・・・・・・";
 
-    const msg_true = {
-      fontSize: "20pt",
-      fontWeight: "bold",
-      color: "red",
-      border: "2px solid green"
-    }
-    const msg_false = {
+    const table = {
       fontSize: "16pt",
-      fontWeight: "plain",
-      color: "white",
-      backgroundColor: "blue",
+      padding: "5px 50px",
     }
-    let flg = true;
+    const th = {
+      color: "white",
+      backgroundColor: "#006",
+      padding: "5px 15px",
+    }
+    const td = {
+      color: "black",
+      padding: "5px 15px",
+      border: "1px solid gray",
+    }
+    let data = [
+      { name: 'Taro', mail: 'taro@yamada', age: 45 },
+      { name: 'Hanako', mail: 'hanako@flower', age: 37 },
+      { name: 'Sachiko', mail: 'sachiko@happy', age: 29 },
+    ];
+
     let el = (
       <div>
-        {flg ?
-          <p style={msg_true}>{message_true}</p>
-          :
-          <p style={msg_false}>{message_false}</p>
-        }
+        <table style={table}>
+          <tr>
+            <th style={th}>name</th>
+            <th style={th}>mail</th>
+            <th style={th}>age</th>
+          </tr>
+          {data.map((value) => (
+            <tr>
+              <td style={td}>{value.name}</td>
+              <td style={td}>{value.mail}</td>
+              <td style={td}>{value.age}</td>
+            </tr>
+          ))}
+        </table>
       </div>
     );
     ReactDOM.render(el, dom);
